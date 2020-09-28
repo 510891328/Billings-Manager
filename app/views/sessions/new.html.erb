@@ -1,0 +1,13 @@
+<%= form_for 'login' do |f| %>
+<div class="field_with_errors">
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+</div>
+<div class="field_with_errors">
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+</div>
+<div class="submit">
+  <%= f.submit 'Login' %>
+</div>
+<% end %>
