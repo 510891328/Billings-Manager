@@ -1,0 +1,21 @@
+<h2>New Billing Type</h2>
+<%= form_for @type do |f| %>
+  <% if @type.errors.any? %>
+    <div id="error_explanation">
+    <h3><%= pluralize(@type.errors.count, "error") %> prohibited this user from being saved:</h3>
+    <ul>
+      <% @type.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+    </div>
+  <% end %>
+
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+<br>
+
+  <%= f.submit "Submit" %>
+
+<% end %>
