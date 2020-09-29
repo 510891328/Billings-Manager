@@ -3466,3 +3466,45 @@ Processing by TypesController#new as HTML
 Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.1ms | Allocations: 6356)
 
 
+Started POST "/types" for ::1 at 2020-09-29 16:04:06 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TypesController#create as HTML
+  Parameters: {"authenticity_token"=>"tkLMX4uU7grtssfeKxbwPxBTCOqRFB0e5skCpQKRCNbpktd/s31TnTH2KqXKswDg+vmxTOezqSJMJRv6Azac5Q==", "type"=>{"name"=>"gas"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jc@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.5ms | Allocations: 7324)
+
+
+  
+SyntaxError (/Users/jasonchilcott/Development/code/Mod2/Billings-Manager/app/models/type.rb:5: syntax error, unexpected ':', expecting end
+...idates :name, uniqueness:true :case_sensitive => false
+...                              ^):
+  
+app/models/type.rb:5: syntax error, unexpected ':', expecting end
+app/models/type.rb:5: syntax error, unexpected ':', expecting end
+app/models/type.rb:5: syntax error, unexpected ':', expecting end
+app/controllers/types_controller.rb:7:in `create'
+Started POST "/types" for ::1 at 2020-09-29 16:05:54 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TypesController#create as HTML
+  Parameters: {"authenticity_token"=>"tkLMX4uU7grtssfeKxbwPxBTCOqRFB0e5skCpQKRCNbpktd/s31TnTH2KqXKswDg+vmxTOezqSJMJRv6Azac5Q==", "type"=>{"name"=>"gas"}, "commit"=>"Submit"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jc@me.com"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/types_controller.rb:7:in `create'
+  [1m[36mType Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "types" WHERE LOWER("types"."name") = LOWER(?) LIMIT ?[0m  [["name", "gas"], ["LIMIT", 1]]
+  ↳ app/controllers/types_controller.rb:7:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/types_controller.rb:7:in `create'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/types_controller.rb:8:in `create'
+  [1m[36mType Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "types" WHERE LOWER("types"."name") = LOWER(?) LIMIT ?[0m  [["name", "gas"], ["LIMIT", 1]]
+  ↳ app/controllers/types_controller.rb:8:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/types_controller.rb:8:in `create'
+  Rendering types/new.html.erb within layouts/application
+  Rendered types/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 832)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 11.9ms | ActiveRecord: 2.4ms | Allocations: 22818)
+
+
