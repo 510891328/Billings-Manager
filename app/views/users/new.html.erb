@@ -10,23 +10,23 @@
     </div>
   <% end %>
 
-<div class="field_with_errors">
+
   <%= f.label :name %>
   <%= f.text_field :name %>
-</div>
-<div class="field_with_errors">
+<br>
+
   <%= f.label :email %>
-  <%= f.text_field :email %>
-</div>
-<div class="field_with_errors">
+  <%= f.email_field :email %>
+<br>
+
   <%= f.label :password %>
-  <%= f.text_field :password %>
-</div>
-<div class="field_with_errors">
+  <%= f.password_field :password %>
+<br>
+
   <%= f.label :password_confirmation %>
-  <%= f.text_field :password_confirmation %>
-</div>
-<div class="submit">
+  <%= f.password_field :password_confirmation %>
+<br>
+
   <%= f.submit "Sign Up" %>
-</div>
+
 <% end %>
