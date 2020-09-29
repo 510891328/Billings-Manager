@@ -1,1 +1,24 @@
-abc
+<%= current_user.name %>
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Fix_or_Var</th>
+  </tr>
+  <% current_user.billings.each do |billing| %>
+  <tr>
+    <td><%= billing.date %></td>
+    <td><%= billing.fix_or_var %></td>
+    <td><%= button_to "detail", billing_path(billing), method: :get %></td>
+    <td><%= button_to "Edit", edit_billing_path(billing), method: :get%></td>
+    <td><%= button_to "Delete", {:controller => :billings,
+      :action => 'destroy', :id => billing.id }, method: :delete %></td>
+  </tr>
+  <% end %>
+</table>
+<%= button_to "Edit Profile", edit_user_path(current_user), method: :get%>
+<!-- Billing Buttons -->
+
+<!-- create -->
+<%= button_to "Add a billing", new_billing_path, method: :get %>
+<!-- Logout Button -->
+<%= button_to "Logout", logout_path, method: :delete %>

@@ -1,0 +1,26 @@
+<%= form_for @billing do |f| %>
+<div class="field_with_errors">
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+</div>
+<div class="field_with_errors">
+  <%= f.label :date %>
+  <%= f.date_select(:date, :order => [:month, :day, :year]) %>
+</div>
+<div class="field_with_errors">
+  <%= f.label :type_name %>
+  <%= f.text_field :type_name, list: 'type_autocomplete'%>
+    <datalist id="type_autocomplete">
+      <% Type.all.each do |type| %>
+        <option value="<%= type.name %>">
+      <% end %>
+    </datalist>
+</div>
+<div class="field_with_errors">
+  <%= f.label :fix_or_var %>
+  <%= f.text_field :fix_or_var %>
+</div>
+<div class="submit">
+  <%= f.submit "Create" %>
+</div>
+<% end %>
