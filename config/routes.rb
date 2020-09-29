@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :types, only: [:new, :create, :destroy]
+  resources :types, only: [:new, :create]
   resources :billings, except: [:index]
   resources :users, only: [:new, :create, :show, :update, :edit, :destroy]
 
