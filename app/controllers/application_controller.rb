@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :current_user
   helper_method :current_user
   helper_method :required_login
+  helper_method :login?
   def current_user
     @user = User.find_by(email: session[:user_email]) || User.new
   end

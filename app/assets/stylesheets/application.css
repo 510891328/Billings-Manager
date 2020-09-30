@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap";
+
+.login{
+  margin-top: 20vh;
+}
+
+.border {
+  width:auto;
+  border-radius: 10px;
+  padding: 5em;
+  background-color: rgb(78, 153, 190);
+}
+.sign_up {
+  margin-top: 1em;
+}
+.form-header{
+  color: white;
+  margin-bottom: 1em;
+  text-align: center;
+}

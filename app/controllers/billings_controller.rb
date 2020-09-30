@@ -1,6 +1,5 @@
-require "byebug"
-
 class BillingsController < ApplicationController
+  before_action :current_user
   def show
     @billing = Billing.find(params[:id])
   end

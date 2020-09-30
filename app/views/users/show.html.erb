@@ -1,24 +1,33 @@
-<%= current_user.name %>
-<table>
-  <tr>
-    <th>Date</th>
-    <th>Fix_or_Var</th>
-  </tr>
-  <% current_user.billings.each do |billing| %>
-  <tr>
-    <td><%= billing.date %></td>
-    <td><%= billing.fix_or_var %></td>
-    <td><%= button_to "detail", billing_path(billing), method: :get %></td>
-    <td><%= button_to "Edit", edit_billing_path(billing), method: :get%></td>
-    <td><%= button_to "Delete", {:controller => :billings,
-      :action => 'destroy', :id => billing.id }, method: :delete %></td>
-  </tr>
-  <% end %>
-</table>
-<%= button_to "Edit Profile", edit_user_path(current_user), method: :get%>
-<!-- Billing Buttons -->
+<div class="container-fluid">
+  <div class="table-responsive">
+    <table class="table table-light table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th>Date</th>
+          <th>Fix_or_Var</th>
+          <th>Detail</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% current_user.billings.each do |billing| %>
+          <tr>
+            <td><%= billing.date %></td>
+            <td><%= billing.fix_or_var %></td>
+            <td><%= button_to "detail", billing_path(billing), method: :get, class:'btn btn-success' %></td>
+            <td><%= button_to "Edit", edit_billing_path(billing), method: :get, class:'btn btn-warning'%></td>
+            <td><%= button_to "Delete", {:controller => :billings,
+              :action => 'destroy', :id => billing.id }, method: :delete, class:'btn btn-danger' %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <!-- Billing Buttons -->
 
-<!-- create -->
-<%= button_to "Add a billing", new_billing_path, method: :get %>
-<!-- Logout Button -->
-<%= button_to "Logout", logout_path, method: :delete %>
+  <!-- create -->
+    <div>
+      <%= button_to "Add a billing", new_billing_path, method: :get, class:"btn btn-primary btn-block" %>
+    </div>
+</div>

@@ -1,26 +1,35 @@
-<%= form_for @billing do |f| %>
-<div class="field_with_errors">
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-</div>
-<div class="field_with_errors">
-  <%= f.label :date %>
-  <%= f.date_select(:date, :order => [:month, :day, :year]) %>
-</div>
-<div class="field_with_errors">
-  <%= f.label :type_name %>
-  <%= f.text_field :type_name, list: 'type_autocomplete'%>
-    <datalist id="type_autocomplete">
-      <% Type.all.each do |type| %>
-        <option value="<%= type.name %>">
+<div class="container-fluid">
+  <div class="d-flex justify-content-center login">
+    <div class="border">
+      <div class="form-header">
+        <h4>Add A Billing</h4>
+      </div>
+      <%= form_for @billing do |f| %>
+      <div class="field_with_errors form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, class:"form-control" %>
+      </div>
+      <div class="field_with_errors form-group">
+        <%= f.label :date %>
+        <%= f.date_select(:date, :order => [:month, :day, :year], class:"form-control") %>
+      </div>
+      <div class="field_with_errors form-group">
+        <%= f.label :type_name %>
+        <%= f.text_field :type_name, list: 'type_autocomplete', class:"form-control"%>
+          <datalist id="type_autocomplete">
+            <% Type.all.each do |type| %>
+              <option value="<%= type.name %>">
+            <% end %>
+          </datalist>
+      </div>
+      <div class="field_with_errors form-group">
+        <%= f.label :fix_or_var %>
+        <%= f.text_field :fix_or_var, class:"form-control" %>
+      </div>
+      <div class="submit">
+        <%= f.submit "Create", class:'btn btn-primary' %>
+      </div>
       <% end %>
-    </datalist>
+    </div>
+  </div>
 </div>
-<div class="field_with_errors">
-  <%= f.label :fix_or_var %>
-  <%= f.text_field :fix_or_var %>
-</div>
-<div class="submit">
-  <%= f.submit "Create" %>
-</div>
-<% end %>
