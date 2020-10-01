@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     return render :new unless @user.save
-    sessions[:user_email] = user.email
+    session[:user_email] = @user.email
     redirect_to user_path(@user)
   end
 
