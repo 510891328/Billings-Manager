@@ -33,3 +33,17 @@
   margin-bottom: 1em;
   text-align: center;
 }
+body {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,119,121,1) 29%, rgba(7,148,164,1) 45%, rgba(18,133,147,1) 66%, rgba(0,212,255,1) 100%);
+}
+
+nav {
+  opacity: 0.7;
+}
+table, ul{
+  opacity: 0.9;
+}
+table{
+  margin-top: 2em;
+}

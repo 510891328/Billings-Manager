@@ -3,10 +3,10 @@
   <head>
     <title>BillingManager</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <%= favicon_link_tag asset_path('favicon.ico') %>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
@@ -20,6 +20,9 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
               <%= button_to "Edit Profile", edit_user_path(current_user), method: :get, class:"btn nav-link"%>
+            </li>
+            <li class="nav-item active">
+              <%= button_to "Check Billings", user_path(current_user), method: :get, class:"btn nav-link"%>
             </li>
           </ul>
           <span class="navbar-text">
