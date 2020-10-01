@@ -5,20 +5,16 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: ~2.6.1
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+* Database creation: simply use `rails db:migrate` in terminal
 
 * Deployment instructions
-
-* ...
+  - run `bundle install` to install all the gems.
+  - run `whenverize` to create `schedule.rb`
+  - remember to show all hidden files in your editor, then
+  - check the application.yml in config
+  - type in
+  `GMAIL_USER_NAME: example@gmail.com
+    GMAIL_PASSWORD: example app password from gmail`
+    
